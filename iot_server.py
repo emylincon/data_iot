@@ -93,7 +93,7 @@ def main():
             print(message)
             time.sleep(2)
     except KeyboardInterrupt:
-        print('\nProgramme Terminated')
+        print('\nProgramme Terminated ')
 
 
 if __name__ == "__main__":

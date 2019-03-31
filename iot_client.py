@@ -126,7 +126,7 @@ def main():
         h2 = Thread(target=plot_resource_util)
         h2.start()
     except KeyboardInterrupt:
-        print('\nProgramme terminated')
+        print('\nProgramme terminated ')
 
 
 if __name__ == "__main__":
