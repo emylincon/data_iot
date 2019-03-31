@@ -11,6 +11,7 @@ import matplotlib.animation as animation
 cpu = []
 store = []
 mem = []
+net = []
 
 fig = plt.figure()
 ax1 = fig.add_subplot(131)
@@ -26,7 +27,7 @@ username = input('Username of Broker: ').strip()
 password = input('Password of Broker: ').strip()
 broker_ip = input("Broker's IP: ").strip()
 broker_port_no = int(input("Broker's Port no: ").strip())
-topic = input("Topic: ").strip()
+topic = 'iot_data'
 print('-----------------------------------')
 
 
@@ -39,8 +40,14 @@ def on_connect(connect_client, userdata, flags, rc):
 
 # Callback Function on Receiving the Subscribed Topic/Message
 def on_message(message_client, userdata, msg):
+    global cpu, net, mem, store
     # print the message received from the subscribed topic
     print('Publisher: ', str(msg.payload, 'utf-8'))
+    data = str(msg.payload, 'utf-8').split()  # cpu, net, mem, store
+    cpu.append(data[0])
+    net.append(data[1])
+    mem.append(data[2])
+    store.append(data[3])
 
 
 client = mqtt.Client()
