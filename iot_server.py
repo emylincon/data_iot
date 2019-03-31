@@ -67,3 +67,24 @@ def get_resource_util():
     h1.start()
     h2.start()
     h3.start()
+
+def main():
+    global v_store
+
+    cmd = ['df -t ext4 | grep sda1 | cut -d " " -f 13 | cut -c 1-2']
+    st = str(sp.check_output(cmd, shell=True), 'utf-8')[0:-1]
+    if st == '':
+        v_store = 'root'
+    else:
+        v_store = 'sda1'
+    try:
+        while True:
+            get_resource_util()
+            drawnow(plot_resource_util)
+            time.sleep(2)
+    except KeyboardInterrupt:
+        print('Programme Terminated')
+
+
+if __name__ == "__main__":
+    main()
