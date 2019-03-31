@@ -126,6 +126,14 @@ def main():
         h2 = Thread(target=plot_resource_util)
         h2.start()
     except KeyboardInterrupt:
+        cmd = "echo 'cpu {}' > data.txt".format(cpu)
+        os.system(cmd)
+        cmd = "echo 'net {}' >> data.txt".format(net)
+        os.system(cmd)
+        cmd = "echo 'store {}' >> data.txt".format(store)
+        os.system(cmd)
+        cmd = "echo 'mem {}' >> data.txt".format(mem)
+        os.system(cmd)
         print('\nProgramme terminated')
 
 
