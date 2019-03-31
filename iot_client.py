@@ -18,7 +18,7 @@ ax4 = fig.add_subplot(222)
 
 os.system('clear')
 print('-----------------------------------')
-print('Welcome to MQTT Subscriber client')
+print('Welcome to MQTT Subscriber client ')
 print('-----------------------------------')
 
 username = input('Username of Broker: ').strip()
