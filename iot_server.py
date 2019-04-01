@@ -49,8 +49,7 @@ def get_network(intf):
     global net
     time_quanta = 3
     if_name = intf  # list(psutil.net_if_stats().keys())[0]
-    # if if_name == 'lo':
-    # if_name = list(psutil.net_if_stats().keys())[1]
+
     nic_speed = psutil.net_if_stats()[if_name][2]  # get(if_name).speed
     if nic_speed == 0:
         nic_speed = 100
