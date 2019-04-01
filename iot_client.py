@@ -70,6 +70,7 @@ def plot_resource_util():
         plot_cpu()
         plot_mem()
         plot_storage()
+        plot_net()
         fig.suptitle('Resource Utilization (CPU|MEMORY|STORAGE)')
     except Exception as e:
         print(e)
