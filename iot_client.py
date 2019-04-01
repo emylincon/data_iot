@@ -66,14 +66,18 @@ def plot_resource_util():
     global store
     global cpu
 
+    try:
+        plot_cpu()
+        plot_mem()
+        plot_storage()
+        fig.suptitle('Resource Utilization (CPU|MEMORY|STORAGE)')
+    except Exception as e:
+        print(e)
+
+
+def draw_loop():
     while True:
-        try:
-            plot_cpu()
-            plot_mem()
-            plot_storage()
-            fig.suptitle('Resource Utilization (CPU|MEMORY|STORAGE)')
-        except Exception as e:
-            print(e)
+        drawnow(plot_resource_util)
 
 
 def plot_mem():
@@ -118,13 +122,17 @@ def plot_net():
     plt.subplot(ax4)
 
 
+def start():
+    h1 = Thread(target=client_loop)
+    h1.start()
+    time.sleep(2)
+    h2 = Thread(target=draw_loop())
+    h2.start()
+
+
 def main():
     try:
-        h1 = Thread(target=client_loop)
-        h1.start()
-        time.sleep(2)
-        h2 = Thread(target=plot_resource_util)
-        h2.start()
+        start()
     except KeyboardInterrupt:
         cmd = "echo 'cpu {}' > data.txt".format(cpu)
         os.system(cmd)
@@ -134,6 +142,7 @@ def main():
         os.system(cmd)
         cmd = "echo 'mem {}' >> data.txt".format(mem)
         os.system(cmd)
+        print('\n {} \n {} \n {} \n {}'.format(cpu, net, store, mem))
         print('\nProgramme terminated')
 
 

@@ -2,7 +2,6 @@ import paho.mqtt.client as mqtt
 import os
 from threading import Thread
 import psutil
-import subprocess as sp
 import time
 
 
@@ -36,14 +35,7 @@ def get_cpu():
 def get_mem():
     global mem
 
-    cmd = ['cat /proc/meminfo | grep MemFree |cut -d ":" -f 2 | cut -d "k" -f 1']
-    free_mem = str(sp.check_output(cmd, shell=True), 'utf-8')[0:-1]
-    cmd = [' cat /proc/meminfo | grep MemAva |cut -d ":" -f 2 | cut -d "k" -f 1']
-    total_mem = str(sp.check_output(cmd, shell=True), 'utf-8')[0:-1]
-    mem_util = (float(free_mem.strip()) / float(total_mem.strip())) * 100
-    # return mem_util  # Returns memory util in percentage
-
-    mem = mem_util
+    mem = psutil.virtual_memory().percent
 
 
 def get_storage():
