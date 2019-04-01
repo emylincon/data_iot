@@ -11,10 +11,10 @@ mem = []
 net = []
 
 fig = plt.figure()
-ax1 = fig.add_subplot(121)
-ax2 = fig.add_subplot(122)
-ax3 = fig.add_subplot(221)
-ax4 = fig.add_subplot(222)
+ax1 = fig.add_subplot(221)
+ax2 = fig.add_subplot(222)
+ax3 = fig.add_subplot(223)
+ax4 = fig.add_subplot(224)
 
 os.system('clear')
 print('-----------------------------------')
