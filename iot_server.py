@@ -76,7 +76,7 @@ def get_resource_util():
     h1 = Thread(target=get_mem)
     h2 = Thread(target=get_cpu)
     h3 = Thread(target=get_storage)
-    h4 = Thread(target=get_network('wlan0'))
+    h4 = Thread(target=get_network('eth0'))
 
     h1.start()
     h2.start()
@@ -85,6 +85,7 @@ def get_resource_util():
 
 
 def main():
+    global mem, cpu, net, store
     try:
         while True:
             get_resource_util()
