@@ -3,6 +3,7 @@ import os
 from threading import Thread
 from drawnow import *
 import time
+import getpass as gp
 
 
 cpu = []
@@ -22,7 +23,7 @@ print('Welcome to MQTT Subscriber client ')
 print('-----------------------------------')
 
 username = input('Username of Broker: ').strip()
-password = input('Password of Broker: ').strip()
+password = gp.getpass('Password of Broker: ').strip()
 broker_ip = input("Broker's IP: ").strip()
 broker_port_no = int(input("Broker's Port no: ").strip())
 topic = 'iot_data'

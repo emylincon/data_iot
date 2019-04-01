@@ -3,6 +3,7 @@ import os
 from threading import Thread
 import psutil
 import time
+import getpass as gp
 
 
 os.system('clear')
@@ -11,7 +12,7 @@ print('Welcome to MQTT Publisher Server')
 print('-----------------------------------')
 client = mqtt.Client()
 username = input('Username of Broker: ').strip()
-password = input('Password of Broker: ').strip()
+password = gp.getpass('Password of Broker: ').strip()
 broker_ip = input("Broker's IP: ").strip()
 broker_port_no = int(input("Broker's Port no: ").strip())
 topic = 'iot_data'
