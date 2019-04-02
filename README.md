@@ -18,5 +18,5 @@ pip3 install drawnow
 pip3 install paho-mqtt
 ```
 
-### Network Architecture 
+#
 ![Network Architecture](arch.png)
