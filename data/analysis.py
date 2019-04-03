@@ -66,7 +66,7 @@ def regression(dg, x_ax):
     nt = np.array(len(y_ax)+1)
     new = polynomial_features.fit_transform(nt)
     next_sample = model.predict(new)                         # Predicting Next Sample Sequence
-    print('Next sample prediction: ', next_sample)
+    print('Next sample prediction: ', next_sample[0][0])
 
     rmse = np.sqrt(mean_squared_error(y, y_poly_pred))       # Calculating Root Mean Square
 
@@ -83,3 +83,4 @@ def regression(dg, x_ax):
     x, y_poly_pred = zip(*sorted_zip)
     plt.plot(x, y_poly_pred, color='m')
     plt.show()
+

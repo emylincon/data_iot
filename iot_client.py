@@ -98,7 +98,6 @@ def plot_cpu():
 
     ax2.grid(True, color='k')
     ax2.plot(cpu, linewidth=5, label='CPU')
-    ax2.set_xlabel('Time (scale of 2 seconds)')
     ax2.set_title('CPU Utilization')
     ax2.legend()
     plt.subplot(ax2)
@@ -119,7 +118,7 @@ def plot_net():
 
     ax4.grid(True, color='k')
     ax4.plot(net, linewidth=5, label='Network')
-    ax4.set_title('Storage Utilization')
+    ax4.set_title('Network Utilization')
     ax4.legend()
     plt.subplot(ax4)
 
