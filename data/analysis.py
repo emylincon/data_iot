@@ -11,7 +11,7 @@ from sklearn.preprocessing import PolynomialFeatures
 # LOADING the collected data to memory
 dic = {}
 
-fr = open('data.txt', 'r')
+fr = open('/usr/lib/python3/dist-packages/data.txt', 'r')
 f1 = fr.readlines()
 for i in f1:
     a = i.split()
