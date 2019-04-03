@@ -86,7 +86,7 @@ def plot_mem():
     global mem
 
     ax1.grid(True, color='k')
-    ax1.plot(mem, linewidth=5, label='Memory')
+    ax1.plot(mem, linewidth=5, label='Memory', color='r')
     ax1.set_ylabel('Utilization in percentage')
     ax1.set_title('Memory Utilization')
     ax1.legend()
@@ -96,8 +96,8 @@ def plot_mem():
 def plot_cpu():
     global cpu
 
-    ax2.grid(True, color='r')
-    ax2.plot(cpu, linewidth=5, label='CPU')
+    ax2.grid(True, color='k')
+    ax2.plot(cpu, linewidth=5, label='CPU', color='g')
     ax2.set_title('CPU Utilization')
     ax2.legend()
     plt.subplot(ax2)
@@ -106,8 +106,8 @@ def plot_cpu():
 def plot_storage():
     global store
 
-    ax3.grid(True, color='m')
-    ax3.plot(store, linewidth=5, label='Storage')
+    ax3.grid(True, color='k')
+    ax3.plot(store, linewidth=5, label='Storage', color='m')
     ax3.set_title('Storage Utilization')
     ax3.legend()
     plt.subplot(ax3)
@@ -116,8 +116,8 @@ def plot_storage():
 def plot_net():
     global store
 
-    ax4.grid(True, color='c')
-    ax4.plot(net, linewidth=5, label='Network')
+    ax4.grid(True, color='k')
+    ax4.plot(net, linewidth=5, label='Network', color='c')
     ax4.set_title('Network Utilization')
     ax4.legend()
     plt.subplot(ax4)
