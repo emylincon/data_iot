@@ -20,3 +20,10 @@ pip3 install paho-mqtt
 
 #
 ![Network Architecture](arch.png)
+
+### Usage
+* Run the client first `python3 iot_client.py`
+    * the client subscribes to iot_data topic in the mqtt broker waiting for the server to publish data
+* Run the server program `python3 iot_server.py`
+    * The server publishes its resource utilization to the iot_data topic
+    
