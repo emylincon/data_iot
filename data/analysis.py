@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import PolynomialFeatures
+
+
+# LOADING the collected data to memory
 dic = {}
 
 fr = open('data.txt', 'r')
@@ -54,23 +57,26 @@ def regression(dg, x_ax):
     y = x_ax[:, np.newaxis]
     x = y_ax[:, np.newaxis]
 
-    polynomial_features = PolynomialFeatures(degree=dg)
-    x_poly = polynomial_features.fit_transform(x)
+    polynomial_features = PolynomialFeatures(degree=dg)      # adding degree features to the analysis
+    x_poly = polynomial_features.fit_transform(x)            # transforming data using the declared features
 
-    model = LinearRegression()
-    model.fit(x_poly, y)
-    y_poly_pred = model.predict(x_poly)
+    model = LinearRegression()                               # declaring model as linear Regression
+    model.fit(x_poly, y)                                     # Training your model
+    y_poly_pred = model.predict(x_poly)                      # Predicting sample data based on the training
     nt = np.array(len(y_ax)+1)
     new = polynomial_features.fit_transform(nt)
-    next_sample = model.predict(new)
+    next_sample = model.predict(new)                         # Predicting Next Sample Sequence
     print('Next sample prediction: ', next_sample)
 
-    rmse = np.sqrt(mean_squared_error(y, y_poly_pred))
+    rmse = np.sqrt(mean_squared_error(y, y_poly_pred))       # Calculating Root Mean Square
 
     print('Root Mean Square Error: ', rmse)
 
+    # Plotting Data
+
     plt.scatter(x, y, s=10)
     plt.scatter(nt, next_sample, s=10, color='r')
+
     # sort the values of x before line plot
     sort_axis = operator.itemgetter(0)
     sorted_zip = sorted(zip(x, y_poly_pred), key=sort_axis)
