@@ -136,13 +136,13 @@ def main():
     try:
         start()
     except KeyboardInterrupt:
-        cmd = "echo 'cpu {}' > data.txt".format(cpu)
+        cmd = "echo 'cpu {}' > data/data.txt".format(cpu)
         os.system(cmd)
-        cmd = "echo 'net {}' >> data.txt".format(net)
+        cmd = "echo 'net {}' >> data/data.txt".format(net)
         os.system(cmd)
-        cmd = "echo 'store {}' >> data.txt".format(store)
+        cmd = "echo 'store {}' >> data/data.txt".format(store)
         os.system(cmd)
-        cmd = "echo 'mem {}' >> data.txt".format(mem)
+        cmd = "echo 'mem {}' >> data/data.txt".format(mem)
         os.system(cmd)
         print('\n {} \n {} \n {} \n {}'.format(cpu, net, store, mem))
         print('\nProgramme terminated')
