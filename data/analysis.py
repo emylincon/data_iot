@@ -7,6 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import PolynomialFeatures
 
+__author__ = 'Emmanuel'
 
 # LOADING the collected data to memory
 dic = {}
