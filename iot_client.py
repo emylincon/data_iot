@@ -5,6 +5,7 @@ from drawnow import *
 import time
 import getpass as gp
 
+__author__ = 'Emmanuel'
 
 cpu = []
 store = []

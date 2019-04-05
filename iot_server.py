@@ -5,6 +5,7 @@ import psutil
 import time
 import getpass as gp
 
+__author__ = 'Emmanuel'
 
 os.system('clear')
 print('-----------------------------------')
