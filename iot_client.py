@@ -43,12 +43,13 @@ def on_message(message_client, userdata, msg):
     global cpu, net, mem, store
     # print the message received from the subscribed topic
     received = str(msg.payload, 'utf-8')
-    print('Publisher: ', received)
+    # print('Publisher: ', received)
     data = received.split()  # cpu, net, mem, store
     cpu.append(data[0])
     net.append(data[1])
     mem.append(data[2])
     store.append(data[3])
+    print('Publisher: CPU: {}, Network: {}, Memory: {}, Store {}'.format(data[0], data[1], data[2], data[3]))
 
 
 client = mqtt.Client()
