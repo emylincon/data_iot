@@ -52,6 +52,7 @@ def on_message(message_client, userdata, msg):
     print('Publisher: CPU: {}, Network: {}, Memory: {}, Store {}'.format(data[0], data[1], data[2], data[3]))
 
 
+# client connection declaration
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
