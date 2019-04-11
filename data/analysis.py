@@ -8,7 +8,7 @@ from sklearn.preprocessing import PolynomialFeatures
 
 __author__ = 'Emmanuel'
 
-# LOADING the collected data to RAM
+# LOADING the collected data into RAM
 dic = {}
 
 fr = open('/usr/lib/python3/dist-packages/data/data.txt', 'r')
