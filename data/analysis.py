@@ -11,7 +11,7 @@ __author__ = 'Emmanuel'
 # LOADING the collected data into RAM
 dic = {}
 
-fr = open('/usr/lib/python3/dist-packages/data/data.txt', 'r')
+fr = open('/usr/lib/python3/dist-packages/data/gen_data.py', 'r')
 f1 = fr.readlines()
 for i in f1:
     a = i.split()
