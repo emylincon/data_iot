@@ -1,18 +1,17 @@
 import operator
 import numpy as np
 import matplotlib.pyplot as plt
-import gen_data as data
+import gen_data
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import PolynomialFeatures
 
 __author__ = 'Emmanuel'
 
-'''
 # LOADING the collected data into RAM
 dic = {}
 
-fr = open('gen_data.py', 'r')
+fr = open('/usr/lib/python3/dist-packages/data/gen_data.py', 'r')
 f1 = fr.readlines()
 for i in f1:
     a = i.split()
@@ -23,7 +22,6 @@ mem = [float(i[0:-1]) for i in dic['mem'][1:-1]]
 cpu = [float(i[0:-1]) for i in dic['cpu'][1:-1]]
 store = [float(i[0:-1]) for i in dic['store'][1:-1]]
 net = [float(i[0:-1]) for i in dic['net'][1:-1]]
-'''
 
 
 def average(var):
